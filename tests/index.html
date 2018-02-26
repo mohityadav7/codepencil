@@ -27,35 +27,34 @@
             <button class="btn btn-outline-success m-2 my-sm-0">Change View</button>
           </li>
         </ul>
-
       </div>
     </nav>
 
-    <div class="container-fluid wrapper">
-      <div class="col-lg-4 col-md-12 left-side">
+    <!-- <div class="container-fluid wrapper"> -->
+      <div class="row no-gutters">
+        <div class="col-lg-4 col-sm-12" id="editor-side">
+          <div class="editor" id="html-box">
+            <div class="box-heading">HTML</div>
+            <div id="html-editor"></div>
+          </div>
 
-        <div class="editor" id="html-box">
-          <div class="box-heading">HTML</div>
-          <div id="html-editor"></div>
+          <div class="editor" id="css-box">
+            <div class="box-heading">CSS</div>
+            <div id="css-editor"></div>
+          </div>
+
+          <div class="editor" id="js-box">
+            <div class="box-heading">JS</div>
+            <div id="js-editor"></div>
+          </div>
         </div>
 
-        <div class="editor" id="css-box">
-          <div class="box-heading">CSS</div>
-          <div id="css-editor"></div>
-        </div>
-
-        <div class="editor" id="js-box">
-          <div class="box-heading">JS</div>
-          <div id="js-editor"></div>
+        <div class="col-lg-8 col-sm-12" id="preview-box">
+          <div class="box-heading">Preview</div>
+          <div class="preview"></div>
         </div>
       </div>
-
-      <div class="col-lg-8 col-md-12" id="preview-box">
-        <div class="box-heading">Preview</div>
-        <div class="preview">
-      </div>
-
-    </div>
+    <!-- </div> -->
 
 
     <!-- Optional JavaScript -->

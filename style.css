@@ -4,12 +4,17 @@ html, body{
   padding: 0px;
   margin: 0px;
 }
+
 .wrapper{
   padding: 0px !important;
   height: 100%;
 }
 
-.left-side{
+.row{
+  height: 100%;
+}
+
+#editor-side{
   height: 100%;
   padding: 0px !important;
 }
@@ -23,7 +28,7 @@ html, body{
   font-size: 13px;
 }
 
-/* hide scrollbars */
+/* hide scrollbars in chrome - don't know about FF */
 ::-webkit-scrollbar {
     display: none;
 }
