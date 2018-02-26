@@ -1,0 +1,28 @@
+html, body{
+  height: 100%;
+  width: 100%;
+  padding: 0px;
+  margin: 0px;
+}
+
+.wrapper{
+  padding: 0px !important;
+  height: 100%;
+}
+
+.left-side{
+  height: 100%;
+  padding: 0px !important;
+}
+
+#html-box, #css-box, #js-box{
+  height: 30%;
+}
+.html-area, .css-area, .js-area{
+  height: 90%;
+  width: 100%;
+}
+
+#preview-box{
+  height: 100%;
+}
