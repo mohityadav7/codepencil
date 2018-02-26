@@ -25,7 +25,7 @@ html, body{
 #html-editor, #css-editor, #js-editor{
   height: 90%;
   width: 100%;
-  font-size: 13px;
+  font-size: 14px;
 }
 
 /* hide scrollbars in chrome - don't know about FF */

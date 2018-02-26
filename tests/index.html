@@ -18,7 +18,6 @@
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
-
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav ml-auto">
           <li class="nav-item active">
@@ -30,50 +29,52 @@
       </div>
     </nav>
 
-    <!-- <div class="container-fluid wrapper"> -->
-      <div class="row no-gutters">
-        <div class="col-lg-4 col-sm-12" id="editor-side">
-          <div id="html-box">
-            <div class="box-heading">HTML</div>
-            <div class="editor" id="html-editor"></div>
-          </div>
-
-          <div id="css-box">
-            <div class="box-heading">CSS</div>
-            <div class="editor" id="css-editor"></div>
-          </div>
-
-          <div id="js-box">
-            <div class="box-heading">JS</div>
-            <div class="editor" id="js-editor"></div>
-          </div>
+    <!-- MAIN BODY OTHER THAN NAVBAR -->
+    <div class="row no-gutters">
+      <div class="col-lg-4 col-sm-12" id="editor-side">
+        <!-- html editor -->
+        <div id="html-box">
+          <div class="box-heading">HTML</div>
+          <div class="editor" id="html-editor"></div>
         </div>
 
-        <div class="col-lg-8 col-sm-12" id="preview-box">
-          <div class="box-heading">Preview</div>
-          <iframe class="preview" id="preview-target">
-            <!DOCTYPE html>
-            <html lang="en">
-            <head>
-              <meta charset="UTF-8">
-              <meta name="viewport" content="width=device-width, initial-scale=1.0">
-              <meta http-equiv="X-UA-Compatible" content="ie=edge">
-            </head>
-            <body></body>
-            </html>
-          </iframe>
+        <!-- css editor -->
+        <div id="css-box">
+          <div class="box-heading">CSS</div>
+          <div class="editor" id="css-editor"></div>
+        </div>
+
+        <!-- js editor -->
+        <div id="js-box">
+          <div class="box-heading">JS</div>
+          <div class="editor" id="js-editor"></div>
         </div>
       </div>
-    <!-- </div> -->
 
+      <!-- preview-box -->
+      <div class="col-lg-8 col-sm-12" id="preview-box">
+        <div class="box-heading">Preview</div>
+        <!-- default template -->
+        <iframe class="preview" id="preview-target">
+          <!DOCTYPE html>
+          <html lang="en">
+          <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <meta http-equiv="X-UA-Compatible" content="ie=edge">
+          </head>
+          <body></body>
+          </html>
+        </iframe>
+      </div>
+    </div>
 
-    <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <!-- for bootstrap -->
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 
-    <!-- scripts for ace editor -->
+    <!-- SCRIPTS FOR ACE EDITOR -->
     <!-- load ace -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.3.1/ace.js"></script>
     <!-- load emmet code and snippets compiled for browser -->
@@ -113,26 +114,22 @@
 
     <!-- scripts for live preview -->
     <script>
-      // $(document).ready(function() {
-      //   $('.editor').on('keyup', function() {
-      //     var target = $('#preview-target')[0].contentWindow.document;
-      //     target.open();
-      //     target.close();
-      //
-      //     var html = htmlEditor.getValue();;
-      //     console.log('html: ' + html);
-      //     $('body', target).append(html);
-      //   });
-      // });
-
-      htmlEditor.session.on('change', function() {
-        var target = $('#preview-target')[0].contentWindow.document;
+      $(document).ready(function() {
+        $('.editor').on('keyup', function() {
+          var target = $('#preview-target')[0].contentWindow.document;
           target.open();
           target.close();
 
-          var html = htmlEditor.getValue();;
+          var html = htmlEditor.getValue();
           console.log('html: ' + html);
+          var css = cssEditor.getValue();
+          console.log('css: ' + css);
+          var js = jsEditor.getValue();
+          console.log('js: ' + js);
+
           $('body', target).append(html);
+          $('head', target).append('<style>' + css + '</style' + '<script>' + js + '<\/script>');
+        });
       });
     </script>
 
