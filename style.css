@@ -35,4 +35,11 @@ html, body{
 
 #preview-box{
   height: 100%;
+  width: 100%;
+}
+
+#preview-target{
+  height: 100%;
+  width: 100%;
+  border: none;
 }

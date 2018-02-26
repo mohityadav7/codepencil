@@ -33,25 +33,35 @@
     <!-- <div class="container-fluid wrapper"> -->
       <div class="row no-gutters">
         <div class="col-lg-4 col-sm-12" id="editor-side">
-          <div class="editor" id="html-box">
+          <div id="html-box">
             <div class="box-heading">HTML</div>
-            <div id="html-editor"></div>
+            <div class="editor" id="html-editor"></div>
           </div>
 
-          <div class="editor" id="css-box">
+          <div id="css-box">
             <div class="box-heading">CSS</div>
-            <div id="css-editor"></div>
+            <div class="editor" id="css-editor"></div>
           </div>
 
-          <div class="editor" id="js-box">
+          <div id="js-box">
             <div class="box-heading">JS</div>
-            <div id="js-editor"></div>
+            <div class="editor" id="js-editor"></div>
           </div>
         </div>
 
         <div class="col-lg-8 col-sm-12" id="preview-box">
           <div class="box-heading">Preview</div>
-          <div class="preview"></div>
+          <iframe class="preview" id="preview-target">
+            <!DOCTYPE html>
+            <html lang="en">
+            <head>
+              <meta charset="UTF-8">
+              <meta name="viewport" content="width=device-width, initial-scale=1.0">
+              <meta http-equiv="X-UA-Compatible" content="ie=edge">
+            </head>
+            <body></body>
+            </html>
+          </iframe>
         </div>
       </div>
     <!-- </div> -->
@@ -78,6 +88,8 @@
       htmlEditor.session.setMode("ace/mode/html");
       // enable emmet on the current editor
       htmlEditor.setOption("enableEmmet", true);
+      htmlEditor.session.setTabSize(2);
+      // htmlEditor.session.setUseWrapMode(true); // uncomment to enable text wrapping
     </script>
 
     <!-- for css editor -->
@@ -85,6 +97,8 @@
       var cssEditor = ace.edit("css-editor");
       // cssEditor.setTheme("ace/theme/monokai");
       cssEditor.session.setMode("ace/mode/css");
+      cssEditor.session.setTabSize(2);
+      // cssEditor.session.setUseWrapMode(true); // uncomment to enable text wrapping
     </script>
 
     <!-- for JavaScript editor -->
@@ -92,6 +106,34 @@
       var jsEditor = ace.edit("js-editor");
       // jsEditor.setTheme("ace/theme/monokai");
       jsEditor.session.setMode("ace/mode/javascript");
+      // jsEditor.session.setTabSize(2); // default is 4
+      // jsEditor.session.setUseWrapMode(true); // uncomment to enable text wrapping
+    </script>
+    <!-- scripts for ace editor ends -->
+
+    <!-- scripts for live preview -->
+    <script>
+      // $(document).ready(function() {
+      //   $('.editor').on('keyup', function() {
+      //     var target = $('#preview-target')[0].contentWindow.document;
+      //     target.open();
+      //     target.close();
+      //
+      //     var html = htmlEditor.getValue();;
+      //     console.log('html: ' + html);
+      //     $('body', target).append(html);
+      //   });
+      // });
+
+      htmlEditor.session.on('change', function() {
+        var target = $('#preview-target')[0].contentWindow.document;
+          target.open();
+          target.close();
+
+          var html = htmlEditor.getValue();;
+          console.log('html: ' + html);
+          $('body', target).append(html);
+      });
     </script>
 
   </body>
