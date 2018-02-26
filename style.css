@@ -4,7 +4,6 @@ html, body{
   padding: 0px;
   margin: 0px;
 }
-
 .wrapper{
   padding: 0px !important;
   height: 100%;
@@ -18,9 +17,15 @@ html, body{
 #html-box, #css-box, #js-box{
   height: 30%;
 }
-.html-area, .css-area, .js-area{
+#html-editor, #css-editor, #js-editor{
   height: 90%;
   width: 100%;
+  font-size: 13px;
+}
+
+/* hide scrollbars */
+::-webkit-scrollbar {
+    display: none;
 }
 
 #preview-box{
