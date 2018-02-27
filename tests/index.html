@@ -5,10 +5,8 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="stylesheet" href="./../style.css">
-
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-
     <title>CodePencil</title>
   </head>
   <body>
@@ -37,20 +35,17 @@
           <div class="box-heading">HTML</div>
           <div class="editor" id="html-editor"></div>
         </div>
-
         <!-- css editor -->
         <div id="css-box">
           <div class="box-heading">CSS</div>
           <div class="editor" id="css-editor"></div>
         </div>
-
         <!-- js editor -->
         <div id="js-box">
           <div class="box-heading">JS</div>
           <div class="editor" id="js-editor"></div>
         </div>
       </div>
-
       <!-- preview-box -->
       <div class="col-lg-8 col-sm-12" id="preview-box">
         <div class="box-heading">Preview</div>
@@ -74,7 +69,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 
-    <!-- SCRIPTS FOR ACE EDITOR -->
+<!-- SCRIPTS FOR ACE EDITOR -->
     <!-- load ace -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.3.1/ace.js"></script>
     <!-- load emmet code and snippets compiled for browser -->
@@ -110,9 +105,9 @@
       // jsEditor.session.setTabSize(2); // default is 4
       // jsEditor.session.setUseWrapMode(true); // uncomment to enable text wrapping
     </script>
-    <!-- scripts for ace editor ends -->
+<!-- SCRIPTS FOR ACE EDITOR ENDS -->
 
-    <!-- scripts for live preview -->
+<!-- SCRIPT FOR LIVE PREVIEW -->
     <script>
       $(document).ready(function() {
         $('.editor').on('keyup', function() {
@@ -121,14 +116,12 @@
           target.close();
 
           var html = htmlEditor.getValue();
-          console.log('html: ' + html);
           var css = cssEditor.getValue();
-          console.log('css: ' + css);
           var js = jsEditor.getValue();
-          console.log('js: ' + js);
 
           $('body', target).append(html);
-          $('head', target).append('<style>' + css + '</style' + '<script>' + js + '<\/script>');
+          $('head', target).append('<style>' + css + '</style');
+          $('head', target).append('<script>' + js + '<\/script>');
         });
       });
     </script>
