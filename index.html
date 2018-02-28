@@ -1,118 +1,121 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link rel="stylesheet" href="./css/style.css">
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <title>CodePencil</title>
-  </head>
-  <body>
-    <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg navbar-dark">
-      <a class="navbar-brand" href="#">CodePencil</a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="stylesheet" href="./css/style.css">
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <title>CodePencil</title>
+</head>
+
+<body>
+  <!-- NAVBAR -->
+  <nav class="navbar navbar-expand-lg navbar-dark">
+    <a class="navbar-brand" href="#">CodePencil</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav ml-auto">
-          <li class="nav-item active">
-            <button class="btn btn-outline-info m-2 my-sm-0">Save</button>
-            <button class="btn btn-outline-info m-2 my-sm-0">Settings</button>
-            <button class="btn btn-outline-info m-2 my-sm-0">Change View</button>
-          </li>
-        </ul>
-      </div>
-    </nav>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item active">
+          <button class="btn btn-outline-info m-2 my-sm-0">Save</button>
+          <button class="btn btn-outline-info m-2 my-sm-0">Settings</button>
+          <button class="btn btn-outline-info m-2 my-sm-0">Change View</button>
+        </li>
+      </ul>
+    </div>
+  </nav>
 
-    <!-- MAIN BODY OTHER THAN NAVBAR -->
-    <div class="row no-gutters">
-      <div class="col-lg-4 col-sm-12" id="editor-side">
-        <!-- html editor -->
-        <div id="html-box">
-          <div class="box-heading">HTML</div>
-          <div class="editor" id="html-editor"></div>
-        </div>
-        <!-- css editor -->
-        <div id="css-box">
-          <div class="box-heading">CSS</div>
-          <div class="editor" id="css-editor"></div>
-        </div>
-        <!-- js editor -->
-        <div id="js-box">
-          <div class="box-heading">JS</div>
-          <div class="editor" id="js-editor"></div>
-        </div>
+  <!-- MAIN BODY OTHER THAN NAVBAR -->
+  <div class="row no-gutters">
+    <div class="col-lg-4 col-sm-12" id="editor-side">
+      <!-- html editor -->
+      <div id="html-box">
+        <div class="box-heading">HTML</div>
+        <div class="editor" id="html-editor"></div>
       </div>
-      <!-- preview-box -->
-      <div class="col-lg-8 col-sm-12" id="preview-box">
-        <div class="box-heading">Preview</div>
-        <!-- default template -->
-        <iframe class="preview" id="preview-target"></iframe>
+      <!-- css editor -->
+      <div id="css-box">
+        <div class="box-heading">CSS</div>
+        <div class="editor" id="css-editor"></div>
+      </div>
+      <!-- js editor -->
+      <div id="js-box">
+        <div class="box-heading">JS</div>
+        <div class="editor" id="js-editor"></div>
       </div>
     </div>
+    <!-- preview-box -->
+    <div class="col-lg-8 col-sm-12" id="preview-box">
+      <div class="box-heading">Preview</div>
+      <iframe class="preview" id="preview-target"></iframe>
+    </div>
+  </div>
 
-    <!-- for bootstrap -->
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+  <!-- for bootstrap -->
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 
-<!-- SCRIPTS FOR ACE EDITOR -->
-    <!-- load ace -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.3.1/ace.js"></script>
-    <!-- load emmet code and snippets compiled for browser -->
-    <script src="https://cloud9ide.github.io/emmet-core/emmet.js"></script>
-    <!-- load ace emmet extension -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.3.1/ext-emmet.js"></script>
+  <!-- SCRIPTS FOR ACE EDITOR -->
+  <!-- load ace -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.3.1/ace.js"></script>
+  <!-- load emmet code and snippets compiled for browser -->
+  <script src="https://cloud9ide.github.io/emmet-core/emmet.js"></script>
+  <!-- load ace emmet extension -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.3.1/ext-emmet.js"></script>
 
-    <!-- for html editor -->
-    <script>
-      var htmlEditor = ace.edit("html-editor");
-      // htmlEditor.setTheme("ace/theme/monokai");
-      htmlEditor.session.setMode("ace/mode/html");
-      // enable emmet on the current editor
-      htmlEditor.setOption("enableEmmet", true);
-      htmlEditor.session.setTabSize(2);
-      // htmlEditor.session.setUseWrapMode(true); // uncomment to enable text wrapping
-    </script>
+  <!-- for html editor -->
+  <!-- similarly repeated for css and js editors -->
+  <script>
+    var htmlEditor = ace.edit("html-editor");
+    // set editor mode to html
+    htmlEditor.session.setMode("ace/mode/html");
+    // enable emmet on the current editor
+    htmlEditor.setOption("enableEmmet", true);
+    // set tab size - default is 4
+    htmlEditor.session.setTabSize(2);
+  </script>
 
-    <!-- for css editor -->
-    <script>
-      var cssEditor = ace.edit("css-editor");
-      // cssEditor.setTheme("ace/theme/monokai");
-      cssEditor.session.setMode("ace/mode/css");
-      cssEditor.session.setTabSize(2);
-    </script>
+  <!-- for css editor -->
+  <script>
+    var cssEditor = ace.edit("css-editor");
+    cssEditor.session.setMode("ace/mode/css");
+    cssEditor.session.setTabSize(2);
+  </script>
 
-    <!-- for JavaScript editor -->
-    <script>
-      var jsEditor = ace.edit("js-editor");
-      // jsEditor.setTheme("ace/theme/monokai");
-      jsEditor.session.setMode("ace/mode/javascript");
-      jsEditor.session.setTabSize(2); // default is 4
-    </script>
-<!-- SCRIPTS FOR ACE EDITOR ENDS -->
+  <!-- for JavaScript editor -->
+  <script>
+    var jsEditor = ace.edit("js-editor");
+    jsEditor.session.setMode("ace/mode/javascript");
+    jsEditor.session.setTabSize(2);
+  </script>
+  <!-- /SCRIPTS FOR ACE EDITOR ENDS -->
 
-<!-- SCRIPT FOR LIVE PREVIEW -->
-    <script>
-      $(document).ready(function() {
-        $('.editor').on('keyup', function() {
-          // var html = htmlEditor.getValue();
-          // var css = cssEditor.getValue();
-          // var js = jsEditor.getValue();
-
-          var iframeContent = '<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta http-equiv="X-UA-Compatible" content="ie=edge">' + '<style>' + cssEditor.getValue() + '</style>' + '</head><body>' + htmlEditor.getValue() + '\n<script>' + jsEditor.getValue() + '<\/script>' + '</body></html>';
-          var target = $('#preview-target')[0].contentWindow.document;
-
-          target.open();
-          target.write(iframeContent);
-          target.close();
-          console.log($('#preview-target').contents());
-        });
+  <!-- SCRIPT FOR LIVE PREVIEW -->
+  <script>
+    $(document).ready(function() {
+      $('.editor').on('keyup', function() {
+        // html content to write in preview-iframe
+        // var iframeContent = '<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta http-equiv="X-UA-Compatible" content="ie=edge">' + '<style>' + cssEditor.getValue() + '</style>' + '</head><body>' + htmlEditor.getValue() + '\n<script>' + jsEditor.getValue() + '<\/script>' + '</body></html>';
+        var iframeContent = '<!DOCTYPE html>\n<html lang="en">\n\t<head>\n\t<meta charset="UTF-8">\n\t<meta name="viewport" content="width=device-width, initial-scale=1.0">\n\t<meta http-equiv="X-UA-Compatible" content="ie=edge">' +
+          '\n\t\t<style>' + '\n\t\t\t' + cssEditor.getValue() + '\n\t\t</style>' + '\n\t</head>\n\t<body>' + '\n\t' + htmlEditor.getValue() + '\n\t<script>' + '\n\t\t\t' + jsEditor.getValue() + '\n\t<\/script>\n\t</body>\n</html>';
+        // get document object from window object generated by the preview-iframe
+        var target = $('#preview-target')[0].contentWindow.document;
+        // opens the document stream for writing
+        target.open();
+        // writes text in the document
+        target.write(iframeContent);
+        // closes the document stream for writing
+        target.close();
       });
-    </script>
+    });
+  </script>
+  <!-- /SCRIPT FOR LIVE PREVIEW -->
 
-  </body>
+</body>
+
 </html>
