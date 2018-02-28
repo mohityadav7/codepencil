@@ -11,7 +11,7 @@
   </head>
   <body>
     <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <nav class="navbar navbar-expand-lg navbar-dark">
       <a class="navbar-brand" href="#">CodePencil</a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -19,9 +19,9 @@
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav ml-auto">
           <li class="nav-item active">
-            <button class="btn btn-outline-success m-2 my-sm-0">Save</button>
-            <button class="btn btn-outline-success m-2 my-sm-0">Settings</button>
-            <button class="btn btn-outline-success m-2 my-sm-0">Change View</button>
+            <button class="btn btn-outline-info m-2 my-sm-0">Save</button>
+            <button class="btn btn-outline-info m-2 my-sm-0">Settings</button>
+            <button class="btn btn-outline-info m-2 my-sm-0">Change View</button>
           </li>
         </ul>
       </div>
@@ -50,17 +50,7 @@
       <div class="col-lg-8 col-sm-12" id="preview-box">
         <div class="box-heading">Preview</div>
         <!-- default template -->
-        <iframe class="preview" id="preview-target">
-          <!DOCTYPE html>
-          <html lang="en">
-          <head>
-            <meta charset="UTF-8">
-            <meta name="viewport" content="width=device-width, initial-scale=1.0">
-            <meta http-equiv="X-UA-Compatible" content="ie=edge">
-          </head>
-          <body></body>
-          </html>
-        </iframe>
+        <iframe class="preview" id="preview-target"></iframe>
       </div>
     </div>
 
@@ -94,7 +84,6 @@
       // cssEditor.setTheme("ace/theme/monokai");
       cssEditor.session.setMode("ace/mode/css");
       cssEditor.session.setTabSize(2);
-      // cssEditor.session.setUseWrapMode(true); // uncomment to enable text wrapping
     </script>
 
     <!-- for JavaScript editor -->
@@ -102,8 +91,7 @@
       var jsEditor = ace.edit("js-editor");
       // jsEditor.setTheme("ace/theme/monokai");
       jsEditor.session.setMode("ace/mode/javascript");
-      // jsEditor.session.setTabSize(2); // default is 4
-      // jsEditor.session.setUseWrapMode(true); // uncomment to enable text wrapping
+      jsEditor.session.setTabSize(2); // default is 4
     </script>
 <!-- SCRIPTS FOR ACE EDITOR ENDS -->
 
@@ -111,17 +99,17 @@
     <script>
       $(document).ready(function() {
         $('.editor').on('keyup', function() {
+          // var html = htmlEditor.getValue();
+          // var css = cssEditor.getValue();
+          // var js = jsEditor.getValue();
+
+          var iframeContent = '<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta http-equiv="X-UA-Compatible" content="ie=edge">' + '<style>' + cssEditor.getValue() + '</style>' + '</head><body>' + htmlEditor.getValue() + '\n<script>' + jsEditor.getValue() + '<\/script>' + '</body></html>';
           var target = $('#preview-target')[0].contentWindow.document;
+
           target.open();
+          target.write(iframeContent);
           target.close();
-
-          var html = htmlEditor.getValue();
-          var css = cssEditor.getValue();
-          var js = jsEditor.getValue();
-
-          $('body', target).append(html);
-          $('head', target).append('<style>' + css + '</style');
-          $('head', target).append('<script>' + js + '<\/script>');
+          console.log($('#preview-target').contents());
         });
       });
     </script>
