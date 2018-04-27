@@ -1,3 +1,7 @@
+:root{
+  --box-height: 250px;
+}
+
 html, body{
   height: 100%;
   width: 100%;
@@ -13,15 +17,16 @@ html, body{
 }
 
 #editor-side{
-  height: 100%;
+  height: auto;
   padding: 0px !important;
-  border-right: 2px solid #333;
+  /* border-right: 2px solid #333; */
   box-sizing: border-box;
 }
 
 #html-box, #css-box, #js-box{
-  height: 33.33%;
+  height: calc(var(--box-height));
   box-sizing: border-box;
+  border-right: 2px solid #333;
 }
 .box-heading{
   padding: 3px 0 3px 20px;
@@ -29,7 +34,7 @@ html, body{
   color: white;
 }
 #html-editor, #css-editor, #js-editor{
-  height: 87.3%;
+  height: calc(var(--box-height) - 1rem - 16px);
   width: 100%;
   font-size: 14px;
 }
@@ -42,15 +47,14 @@ html, body{
 #preview-box{
   height: 100%;
   width: 100%;
-  /* border-top: 2px solid #333; */
   padding: 0;
   margin: 0;
 }
 
 #preview-target{
-  height: 95.7%;
+  height: 100%;
   width: 100%;
   border: none;
-  margin-bottom: -0.6%;
+  /* margin-bottom: -0.6%; */
   /* padding: -3.2%; */
 }
